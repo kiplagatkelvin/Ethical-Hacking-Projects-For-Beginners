@@ -120,7 +120,8 @@ sudo nmap -A 192.168.1.1/24
 
 #### Step 5: Documenting Your Findings
  **Save Output to a File**:
-     ```bash
+ ```bash
+ 
   nmap -oN scan_results.txt 192.168.1.1
   
 **Create a Report**: Document your findings, including IP addresses, open ports, services, and any detected vulnerabilities.
@@ -133,4 +134,7 @@ Additional Resources
 Nmap Official Documentation Nmap Cheat Sheet Online Nmap Course on Udemy
 
 This project will give you a solid foundation in using Nmap for network scanning and enumeration, essential skills for any ethical hacker.
+bash
+Copy code
+nmap -sV 192.168.1.1
 
