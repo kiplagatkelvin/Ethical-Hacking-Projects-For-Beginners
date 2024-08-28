@@ -20,12 +20,12 @@ A local network with multiple devices connected (computers, printers, IoT device
 - **Install Kali Linux**: Ensure that you have Kali Linux installed on your machine, either directly or via a virtual machine.
 - **Update Kali Linux**: Before starting, update your system with the following commands:
 
-  
-  sudo apt update && sudo apt upgrade -y
+    ```bash
+sudo apt update && sudo apt upgrade -y
 
- expected image 
- <img width="941" alt="image" src="https://github.com/user-attachments/assets/ed9b035d-cbf8-47d7-8edd-48f4e46ea1ef">
-
+     expected image output:
+    <img width="941" alt="image" src="https://github.com/user-attachments/assets/ed9b035d-cbf8-47d7-8edd-48f4e46ea1ef">
+ 
   
 
 #### Step 2: Understanding Nmap
@@ -41,70 +41,80 @@ A local network with multiple devices connected (computers, printers, IoT device
    Example:
    
 
-   nmap 192.168.1.1
-   Expected Output: A list of devices on your network, their IP addresses, and the open ports.
+     ```bash
+ nmap 192.168.1.1
+                   
+    Expected Output: A list of devices on your network, their IP addresses, and the open ports.
 
-<img width="613" alt="image" src="https://github.com/user-attachments/assets/68a2d831-c7fb-4ffa-9a70-1cd116e0af11">
+    <img width="613" alt="image" src="https://github.com/user-attachments/assets/68a2d831-c7fb-4ffa-9a70-1cd116e0af11">
 
    
 3. **Scan a Range of IP Addresses**:
      
-   nmap 192.168.1.1-254
+   ```bash
+  nmap 192.168.1.1-254
    
-   expected output:
-   range of IP Addresses
+    expected output:
+    range of IP Addresses
 
-<img width="896" alt="image" src="https://github.com/user-attachments/assets/8705eadd-f519-4a5f-969c-35398e5f027c">
+    <img width="896" alt="image" src="https://github.com/user-attachments/assets/8705eadd-f519-4a5f-969c-35398e5f027c">
 
    
   
 4. **Scan an Entire Subnet**:
    
    
+   ```bash
  nmap 192.168.1.0/24
 
-Expected Output: A list of devices on your network, their IP addresses, and the open ports.
+    Expected Output: A list of devices on your network, their IP addresses, and the open ports.
 
- <img width="547" alt="image" src="https://github.com/user-attachments/assets/08482d88-5ee6-4476-859a-d92906e0f3a5">
+    <img width="547" alt="image" src="https://github.com/user-attachments/assets/08482d88-5ee6-4476-859a-d92906e0f3a5">
 
    
 5. **Detailed Output**:
    
    
-nmap -v 192.168.1.1
-   expected output results from my IP address.
+   ```bash
+  nmap -v 192.168.1.1
+  
+    expected output results from my IP address.
 
-<img width="425" alt="image" src="https://github.com/user-attachments/assets/90752501-4072-49f3-87d5-bef495da7d22">
+    <img width="425" alt="image" src="https://github.com/user-attachments/assets/90752501-4072-49f3-87d5-bef495da7d22">
 
 
 #### Step 4: Advanced Nmap Scanning Techniques
 1. **Service Version Detection**:
-   nmap -sV 192.168.1.1
+     ```bash
+  nmap -sV 192.168.1.1
    
-   expected output:Expected Output: A detailed list of open ports and the services running on them, including version information.
+    expected output:Expected Output: A detailed list of open ports and the services running on them, including version information.
 
-<img width="954" alt="image" src="https://github.com/user-attachments/assets/4a202f81-996a-4421-a0b8-c07cae72eccd">
+    <img width="954" alt="image" src="https://github.com/user-attachments/assets/4a202f81-996a-4421-a0b8-c07cae72eccd">
 
    
 3. **Operating System Detection**:
  Use the -O option to detect the operating systems of devices on the network:
 
 
+   ```bash
 sudo nmap -O 192.168.1.1/24
-Expected Output: The operating system details of the devices on the network
+      
+      Expected Output: The operating system details of the devices on the network
 
-   sudo nmap -O 192.168.1.1/24
+    sudo nmap -O 192.168.1.1/24
 
-<img width="554" alt="image" src="https://github.com/user-attachments/assets/58296772-f33e-4f5b-bd5c-41c79832bccc">
+     <img width="554" alt="image" src="https://github.com/user-attachments/assets/58296772-f33e-4f5b-bd5c-41c79832bccc">
 
    
 5. **Aggressive Scan**:
    
+    ```bash
 sudo nmap -A 192.168.1.1/24
 
-   Perform an aggressive scan using the -A option, which includes OS detection, version detection, script scanning, and traceroute:
+    Perform an aggressive scan using the -A option, which includes OS detection, version detection, script scanning, and traceroute:
 
-<img width="954" alt="image" src="https://github.com/user-attachments/assets/b804bc94-51f3-4423-ae41-fc2df6f4056e">
+    <img width="954" alt="image" src="https://github.com/user-attachments/assets/b804bc94-51f3-4423-ae41-fc2df6f4056e">
 
 
    
@@ -112,29 +122,30 @@ sudo nmap -A 192.168.1.1/24
 7. **Vulnerability Scanning**:
 
    
-   nmap --script vuln 192.168.1.1
-   expected output:
+   ```bash
+  nmap --script vuln 192.168.1.1
+      
+      expected output:
  
-   <img width="421" alt="image" src="https://github.com/user-attachments/assets/7bf357b3-62ab-4b17-bdf0-2cf70a29dceb">
+    <img width="421" alt="image" src="https://github.com/user-attachments/assets/7bf357b3-62ab-4b17-bdf0-2cf70a29dceb">
 
 
 #### Step 5: Documenting Your Findings
  **Save Output to a File**:
- ```bash
  
-  nmap -oN scan_results.txt 192.168.1.1
+    ```bash
+nmap -oN scan_results.txt 192.168.1.1
   
-**Create a Report**: Document your findings, including IP addresses, open ports, services, and any detected vulnerabilities.
+  
+    **Create a Report**: Document your findings, including IP addresses, open ports, services, and any detected vulnerabilities.
 
 
-### Conclusion
-This project serves as an introduction to ethical hacking by teaching you how to use Nmap for network enumeration and scanning. As you progress, you'll gain more advanced skills in ethical hacking and cybersecurity.
+    ### Conclusion
+    This project serves as an introduction to ethical hacking by teaching you how to use Nmap for network enumeration and       scanning. As you progress, you'll gain more advanced skills in ethical hacking and cybersecurity.
 
-Additional Resources
-Nmap Official Documentation Nmap Cheat Sheet Online Nmap Course on Udemy
+    Additional Resources
+    Nmap Official Documentation Nmap Cheat Sheet Online Nmap Course on Udemy
 
-This project will give you a solid foundation in using Nmap for network scanning and enumeration, essential skills for any ethical hacker.
-bash
-Copy code
-nmap -sV 192.168.1.1
+    This project will give you a solid foundation in using Nmap for network scanning and enumeration, essential skills for         any ethical hacker.
+
 
