@@ -20,7 +20,7 @@ A local network with multiple devices connected (computers, printers, IoT device
 - **Install Kali Linux**: Ensure that you have Kali Linux installed on your machine, either directly or via a virtual machine.
 - **Update Kali Linux**: Before starting, update your system with the following commands:
 
-  ```bash
+  
   sudo apt update && sudo apt upgrade -y
 
  expected image 
@@ -40,7 +40,7 @@ A local network with multiple devices connected (computers, printers, IoT device
    
    Example:
    
-  ```bash
+
    nmap 192.168.1.1
    Expected Output: A list of devices on your network, their IP addresses, and the open ports.
 
@@ -48,7 +48,7 @@ A local network with multiple devices connected (computers, printers, IoT device
 
    
 3. **Scan a Range of IP Addresses**:
-     ```bash
+     
    nmap 192.168.1.1-254
    
    expected output:
@@ -60,7 +60,7 @@ A local network with multiple devices connected (computers, printers, IoT device
   
 4. **Scan an Entire Subnet**:
    
-     ```bash
+   
  nmap 192.168.1.0/24
 
 Expected Output: A list of devices on your network, their IP addresses, and the open ports.
@@ -70,7 +70,7 @@ Expected Output: A list of devices on your network, their IP addresses, and the 
    
 5. **Detailed Output**:
    
-   ```bash
+   
 nmap -v 192.168.1.1
    expected output results from my IP address.
 
@@ -79,7 +79,6 @@ nmap -v 192.168.1.1
 
 #### Step 4: Advanced Nmap Scanning Techniques
 1. **Service Version Detection**:
-   ```bash
    nmap -sV 192.168.1.1
    
    expected output:Expected Output: A detailed list of open ports and the services running on them, including version information.
@@ -89,7 +88,7 @@ nmap -v 192.168.1.1
    
 3. **Operating System Detection**:
  Use the -O option to detect the operating systems of devices on the network:
-```bash
+
 
 sudo nmap -O 192.168.1.1/24
 Expected Output: The operating system details of the devices on the network
@@ -101,7 +100,6 @@ Expected Output: The operating system details of the devices on the network
    
 5. **Aggressive Scan**:
    
-    ```bash
 sudo nmap -A 192.168.1.1/24
 
    Perform an aggressive scan using the -A option, which includes OS detection, version detection, script scanning, and traceroute:
@@ -112,7 +110,7 @@ sudo nmap -A 192.168.1.1/24
    
    
 7. **Vulnerability Scanning**:
-```bash
+
    
    nmap --script vuln 192.168.1.1
    expected output:
@@ -121,11 +119,11 @@ sudo nmap -A 192.168.1.1/24
 
 
 #### Step 5: Documenting Your Findings
-- **Save Output to a File**:
-  bash
+ **Save Output to a File**:
+     ```bash
   nmap -oN scan_results.txt 192.168.1.1
   
-- **Create a Report**: Document your findings, including IP addresses, open ports, services, and any detected vulnerabilities.
+**Create a Report**: Document your findings, including IP addresses, open ports, services, and any detected vulnerabilities.
 
 
 ### Conclusion
