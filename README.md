@@ -19,7 +19,7 @@ A local network with multiple devices connected (computers, printers, IoT device
 #### Step 1: Setting Up Your Environment
 - **Install Kali Linux**: Ensure that you have Kali Linux installed on your machine, either directly or via a virtual machine.
 - **Update Kali Linux**: Before starting, update your system with the following commands:
-  bash
+  
   sudo apt update && sudo apt upgrade -y
 
  expected image 
@@ -29,15 +29,17 @@ A local network with multiple devices connected (computers, printers, IoT device
 
 #### Step 2: Understanding Nmap
 - **Nmap (Network Mapper)**: Nmap is used for network discovery and security auditing. It helps you create a map of the network by identifying hosts and services.
-  n/b Open a terminal on your Kali Linux machine. Step 2: Run a basic scan on your local network. Replace 192.168.1.1/24 with your network's IP range.
+  n/b Open a terminal on your Kali Linux machine. Run a basic scan on your local network.
+
+  Replace 192.168.1.1/24 with your network's IP range.
 
 #### Step 3: Basic Nmap Commands
 1. **Scan a Single IP Address**:
-   ```bash
+   
    nmap <IP-Address>
    
    Example:
-   bash
+   
    nmap 192.168.1.1
    Expected Output: A list of devices on your network, their IP addresses, and the open ports.
 
@@ -45,8 +47,9 @@ A local network with multiple devices connected (computers, printers, IoT device
 
    
 2. **Scan a Range of IP Addresses**:
-   bash
+   
    nmap 192.168.1.1-254
+   
    expected output:
    range of IP Addresses
 
@@ -54,16 +57,16 @@ A local network with multiple devices connected (computers, printers, IoT device
 
    
   
-3. **Scan an Entire Subnet**:
-   bash
+4. **Scan an Entire Subnet**:
+   
    nmap 192.168.1.0/24
    Expected Output: A list of devices on your network, their IP addresses, and the open ports.
 
     <img width="547" alt="image" src="https://github.com/user-attachments/assets/08482d88-5ee6-4476-859a-d92906e0f3a5">
 
    
-4. **Detailed Output**:
-   bash
+5. **Detailed Output**:
+   
    nmap -v 192.168.1.1
    expected output results from my IP address.
 
@@ -85,14 +88,14 @@ A local network with multiple devices connected (computers, printers, IoT device
 
 sudo nmap -O 192.168.1.1/24
 Expected Output: The operating system details of the devices on the network
-bash
+
    sudo nmap -O 192.168.1.1/24
    
    <img width="554" alt="image" src="https://github.com/user-attachments/assets/58296772-f33e-4f5b-bd5c-41c79832bccc">
 
    
 5. **Aggressive Scan**:
-   bash
+   
     sudo nmap -A 192.168.1.1/24
 
    Perform an aggressive scan using the -A option, which includes OS detection, version detection, script scanning, and traceroute:
@@ -100,13 +103,13 @@ bash
    <img width="954" alt="image" src="https://github.com/user-attachments/assets/b804bc94-51f3-4423-ae41-fc2df6f4056e">
 
 
-
    
    
 7. **Vulnerability Scanning**:
-   bash
+   
    nmap --script vuln 192.168.1.1
    expected output:
+ 
    <img width="421" alt="image" src="https://github.com/user-attachments/assets/7bf357b3-62ab-4b17-bdf0-2cf70a29dceb">
 
 
