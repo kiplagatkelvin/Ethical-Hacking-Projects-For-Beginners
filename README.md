@@ -31,44 +31,41 @@ A local network with multiple devices connected (computers, printers, IoT device
 #### Step 2: Understanding Nmap
 - **Nmap (Network Mapper)**: Nmap is used for network discovery and security auditing. It helps you create a map of the network by identifying hosts and services.
   n/b Open a terminal on your Kali Linux machine. Run a basic scan on your local network.
-  ```bash
-
   Replace 192.168.1.1/24 with your network's IP range.
 
 #### Step 3: Basic Nmap Commands
 1. **Scan a Single IP Address**:
    
-```bash
-    nmap <IP-Address>
+   nmap <IP-Address>
    
    Example:
-```bash
    
+  ```bash
    nmap 192.168.1.1
    Expected Output: A list of devices on your network, their IP addresses, and the open ports.
 
-   <img width="613" alt="image" src="https://github.com/user-attachments/assets/68a2d831-c7fb-4ffa-9a70-1cd116e0af11">
+<img width="613" alt="image" src="https://github.com/user-attachments/assets/68a2d831-c7fb-4ffa-9a70-1cd116e0af11">
 
    
 3. **Scan a Range of IP Addresses**:
-```bash
-   
+     ```bash
    nmap 192.168.1.1-254
    
    expected output:
    range of IP Addresses
 
-   <img width="896" alt="image" src="https://github.com/user-attachments/assets/8705eadd-f519-4a5f-969c-35398e5f027c">
+<img width="896" alt="image" src="https://github.com/user-attachments/assets/8705eadd-f519-4a5f-969c-35398e5f027c">
 
    
   
 4. **Scan an Entire Subnet**:
    
-  ```bash
+     ```bash
  nmap 192.168.1.0/24
-   Expected Output: A list of devices on your network, their IP addresses, and the open ports.
 
-    <img width="547" alt="image" src="https://github.com/user-attachments/assets/08482d88-5ee6-4476-859a-d92906e0f3a5">
+Expected Output: A list of devices on your network, their IP addresses, and the open ports.
+
+ <img width="547" alt="image" src="https://github.com/user-attachments/assets/08482d88-5ee6-4476-859a-d92906e0f3a5">
 
    
 5. **Detailed Output**:
@@ -77,7 +74,7 @@ A local network with multiple devices connected (computers, printers, IoT device
 nmap -v 192.168.1.1
    expected output results from my IP address.
 
-   <img width="425" alt="image" src="https://github.com/user-attachments/assets/90752501-4072-49f3-87d5-bef495da7d22">
+<img width="425" alt="image" src="https://github.com/user-attachments/assets/90752501-4072-49f3-87d5-bef495da7d22">
 
 
 #### Step 4: Advanced Nmap Scanning Techniques
@@ -87,7 +84,7 @@ nmap -v 192.168.1.1
    
    expected output:Expected Output: A detailed list of open ports and the services running on them, including version information.
 
-   <img width="954" alt="image" src="https://github.com/user-attachments/assets/4a202f81-996a-4421-a0b8-c07cae72eccd">
+<img width="954" alt="image" src="https://github.com/user-attachments/assets/4a202f81-996a-4421-a0b8-c07cae72eccd">
 
    
 3. **Operating System Detection**:
@@ -98,8 +95,8 @@ sudo nmap -O 192.168.1.1/24
 Expected Output: The operating system details of the devices on the network
 
    sudo nmap -O 192.168.1.1/24
-   
-   <img width="554" alt="image" src="https://github.com/user-attachments/assets/58296772-f33e-4f5b-bd5c-41c79832bccc">
+
+<img width="554" alt="image" src="https://github.com/user-attachments/assets/58296772-f33e-4f5b-bd5c-41c79832bccc">
 
    
 5. **Aggressive Scan**:
@@ -109,7 +106,7 @@ sudo nmap -A 192.168.1.1/24
 
    Perform an aggressive scan using the -A option, which includes OS detection, version detection, script scanning, and traceroute:
 
-   <img width="954" alt="image" src="https://github.com/user-attachments/assets/b804bc94-51f3-4423-ae41-fc2df6f4056e">
+<img width="954" alt="image" src="https://github.com/user-attachments/assets/b804bc94-51f3-4423-ae41-fc2df6f4056e">
 
 
    
@@ -129,7 +126,6 @@ sudo nmap -A 192.168.1.1/24
   nmap -oN scan_results.txt 192.168.1.1
   
 - **Create a Report**: Document your findings, including IP addresses, open ports, services, and any detected vulnerabilities.
-
 
 
 ### Conclusion
