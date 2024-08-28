@@ -19,7 +19,8 @@ A local network with multiple devices connected (computers, printers, IoT device
 #### Step 1: Setting Up Your Environment
 - **Install Kali Linux**: Ensure that you have Kali Linux installed on your machine, either directly or via a virtual machine.
 - **Update Kali Linux**: Before starting, update your system with the following commands:
-  
+
+  ```bash
   sudo apt update && sudo apt upgrade -y
 
  expected image 
@@ -30,15 +31,18 @@ A local network with multiple devices connected (computers, printers, IoT device
 #### Step 2: Understanding Nmap
 - **Nmap (Network Mapper)**: Nmap is used for network discovery and security auditing. It helps you create a map of the network by identifying hosts and services.
   n/b Open a terminal on your Kali Linux machine. Run a basic scan on your local network.
+  ```bash
 
   Replace 192.168.1.1/24 with your network's IP range.
 
 #### Step 3: Basic Nmap Commands
 1. **Scan a Single IP Address**:
    
-   nmap <IP-Address>
+```bash
+    nmap <IP-Address>
    
    Example:
+```bash
    
    nmap 192.168.1.1
    Expected Output: A list of devices on your network, their IP addresses, and the open ports.
@@ -46,7 +50,8 @@ A local network with multiple devices connected (computers, printers, IoT device
    <img width="613" alt="image" src="https://github.com/user-attachments/assets/68a2d831-c7fb-4ffa-9a70-1cd116e0af11">
 
    
-2. **Scan a Range of IP Addresses**:
+3. **Scan a Range of IP Addresses**:
+```bash
    
    nmap 192.168.1.1-254
    
@@ -59,7 +64,8 @@ A local network with multiple devices connected (computers, printers, IoT device
   
 4. **Scan an Entire Subnet**:
    
-   nmap 192.168.1.0/24
+  ```bash
+ nmap 192.168.1.0/24
    Expected Output: A list of devices on your network, their IP addresses, and the open ports.
 
     <img width="547" alt="image" src="https://github.com/user-attachments/assets/08482d88-5ee6-4476-859a-d92906e0f3a5">
@@ -67,7 +73,8 @@ A local network with multiple devices connected (computers, printers, IoT device
    
 5. **Detailed Output**:
    
-   nmap -v 192.168.1.1
+   ```bash
+nmap -v 192.168.1.1
    expected output results from my IP address.
 
    <img width="425" alt="image" src="https://github.com/user-attachments/assets/90752501-4072-49f3-87d5-bef495da7d22">
@@ -75,7 +82,7 @@ A local network with multiple devices connected (computers, printers, IoT device
 
 #### Step 4: Advanced Nmap Scanning Techniques
 1. **Service Version Detection**:
-   bash
+   ```bash
    nmap -sV 192.168.1.1
    
    expected output:Expected Output: A detailed list of open ports and the services running on them, including version information.
@@ -85,6 +92,7 @@ A local network with multiple devices connected (computers, printers, IoT device
    
 3. **Operating System Detection**:
  Use the -O option to detect the operating systems of devices on the network:
+```bash
 
 sudo nmap -O 192.168.1.1/24
 Expected Output: The operating system details of the devices on the network
@@ -96,7 +104,8 @@ Expected Output: The operating system details of the devices on the network
    
 5. **Aggressive Scan**:
    
-    sudo nmap -A 192.168.1.1/24
+    ```bash
+sudo nmap -A 192.168.1.1/24
 
    Perform an aggressive scan using the -A option, which includes OS detection, version detection, script scanning, and traceroute:
 
@@ -106,6 +115,7 @@ Expected Output: The operating system details of the devices on the network
    
    
 7. **Vulnerability Scanning**:
+```bash
    
    nmap --script vuln 192.168.1.1
    expected output:
@@ -125,5 +135,8 @@ Expected Output: The operating system details of the devices on the network
 ### Conclusion
 This project serves as an introduction to ethical hacking by teaching you how to use Nmap for network enumeration and scanning. As you progress, you'll gain more advanced skills in ethical hacking and cybersecurity.
 
-```
+Additional Resources
+Nmap Official Documentation Nmap Cheat Sheet Online Nmap Course on Udemy
+
+This project will give you a solid foundation in using Nmap for network scanning and enumeration, essential skills for any ethical hacker.
 
