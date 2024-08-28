@@ -20,11 +20,11 @@ A local network with multiple devices connected (computers, printers, IoT device
 - **Install Kali Linux**: Ensure that you have Kali Linux installed on your machine, either directly or via a virtual machine.
 - **Update Kali Linux**: Before starting, update your system with the following commands:
 
-    ```bash
+```bash
 sudo apt update && sudo apt upgrade -y
 
-     expected image output:
-    <img width="941" alt="image" src="https://github.com/user-attachments/assets/ed9b035d-cbf8-47d7-8edd-48f4e46ea1ef">
+expected image output:
+<img width="941" alt="image" src="https://github.com/user-attachments/assets/ed9b035d-cbf8-47d7-8edd-48f4e46ea1ef">
  
   
 
